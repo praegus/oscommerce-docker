@@ -1,0 +1,26 @@
+version: "3.5"
+
+services:
+  workshop:
+    container_name: Praegusworkshop
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    depends_on:
+      - db-workshop
+    environment:
+      - OSCOMMERCE_DB_HOST=db-workshop
+      - OSCOMMERCE_DB_USER=root
+      - OSCOMMERCE_DB_PASSWORD=root
+      - OSCOMMERCE_DB_NAME=oscommerce
+      - OSCOMMERCE_URL=
+      - OSCOMMERCE_ADMIN=root
+      - OSCOMMERCE_PASSWORD=root
+    ports:
+      - "8096:80"
+    working_dir: /var/www/html/
+  db-workshop:
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=oscommerce
