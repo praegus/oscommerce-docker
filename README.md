@@ -5,4 +5,5 @@ Deze dockerfile maakt 2 containers aan;
 - Mysql
 
 Hoe te gebruiken;
-Navigeer naar de geclonde folder en start de compose file $docker-compose up -d
+Stap 1: Navigeer naar de gekloonde folder 
+Stap 2: Start de compose file $docker-compose up -d
